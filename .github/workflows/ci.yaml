@@ -10,6 +10,9 @@ on:
   # Allows to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  NODE_CONFIG_ENV: "test"
+
 jobs:
   install_packages:
     runs-on: ubuntu-latest
