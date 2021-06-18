@@ -26,7 +26,7 @@ jobs:
         key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-yarn-v1-
-    - run: yarn install --prefer-offline    
+    - run: yarn install --frozen-lockfile    
 
   job_two:
     name: Job Two
@@ -44,4 +44,4 @@ jobs:
         key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-yarn-v1-
-    - run: yarn install --prefer-offline     
+    - run: yarn install --frozen-lockfile     
