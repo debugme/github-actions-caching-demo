@@ -56,3 +56,5 @@ jobs:
       - name: Install yarn dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install --prefer-offline
+      - name: Run server unit tests
+        run: echo "running server unit tests"
