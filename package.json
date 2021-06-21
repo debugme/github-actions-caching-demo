@@ -17,31 +17,16 @@
     "url": "https://github.com/debugme/github-actions-caching-demo/issues"
   },
   "homepage": "https://github.com/debugme/github-actions-caching-demo#readme",
-
-  "resolutions": {
-    "@types/react": "^16.8.20",
-    "@types/react-dom": "^16.8.3"
-    },
-    "dependencies": {
+  "dependencies": {
     "full-icu": "1.3.1",
     "next": "9.3.2",
     "react": "16.11.0",
-    "react-dom": "16.13.0"
-    },
-    "devDependencies": {
+    "react-dom": "16.13.0",
+    "chalk": "4.1.1"
+  },
+  "devDependencies": {
     "jest": "26.6.3",
     "tslint": "6.1.3",
     "typescript": "4.2.4"
-    }
+  }
 }
-
-
-
-
-
-
-
-
-
-
- 
