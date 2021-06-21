@@ -67,7 +67,13 @@ jobs:
         run: yarn install --prefer-offline
       - name: see what's in folder
         run: pwd;ls -al
-      # - name: ensure node_modules/.bin binaries added to path
-      #   run: echo ":./node_modules/.bin" >> $PATH
+      - name: what is my HOME and PATH
+        run: echo $HOME;echo $PATH
       - name: check jest runs 
         run: ./node_modules/.bin/jest --version
+      - name: check next runs 
+        run: ./node_modules/.bin/next --version        
+      - name: check tsc runs 
+        run: ./node_modules/.bin/tsc --version                
+      - name: check tslint runs 
+        run: ./node_modules/.bin/tslint --version                
