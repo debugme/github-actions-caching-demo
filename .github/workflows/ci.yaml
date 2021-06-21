@@ -65,10 +65,12 @@ jobs:
       - name: Install yarn dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install --prefer-offline
+      - name: add binary folder to path
+        run: echo "$PWD/node_modules/.bin" >> $GITHUB_PATH
       - name: see what's in folder
         run: pwd;ls -al
-      - name: what is my HOME and PATH
-        run: echo $HOME;echo $PATH
+      - name: what is my PATH
+        run: echo $PATH
       - name: check jest runs 
         run: ./node_modules/.bin/jest --version
       - name: check next runs 
