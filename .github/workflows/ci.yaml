@@ -23,19 +23,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '12'  
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"          
-      - uses: actions/cache@v2
-        id: yarn-cache    
-        with:
-          path: |
-            **/node_modules/.bin
-            # **/node_modules/full-icu
-            # ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+      - uses: bahmutov/npm-install@v1
       - name: Install yarn dependencies 
         if: steps.yarn-cache.outputs.cache-hit != 'true'         
         run: yarn install --prefer-offline  
@@ -51,30 +39,16 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '12'    
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"        
-      - uses: actions/cache@v2
-        id: yarn-cache
-        with:
-          path: |
-            **/node_modules/.bin
-            # **/node_modules/full-icu
-            # ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: Install yarn dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
+      - uses: bahmutov/npm-install@v1
         run: yarn install --prefer-offline
-      - name: add binary folder to path
-        run: echo "$PWD/node_modules/.bin" >> $GITHUB_PATH
+      # - name: add binary folder to path
+      #   run: echo "$PWD/node_modules/.bin" >> $GITHUB_PATH
       - name: see what's in folder
         run: pwd;ls -al
       - name: what is my PATH
         run: echo $PATH
-      - name: see what's in node_modules folder
-        run: ls -al ./node_modules        
+      # - name: see what's in node_modules folder
+      #   run: ls -al ./node_modules        
       # - name: check jest runs 
       #   run: jest --version
       # - name: check next runs 
