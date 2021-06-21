@@ -60,6 +60,6 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install --prefer-offline
       - name: output cached directory
-        run: ls -al /home/runner/work/github-actions-caching-demo/github-actions-caching-demo
+        run: pwd;ls -al
       - name: Check jest is available
         run: jest --version
