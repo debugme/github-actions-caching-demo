@@ -24,8 +24,7 @@ jobs:
         with:
           node-version: '12'  
       - uses: bahmutov/npm-install@v1
-      - name: Install yarn dependencies 
-        if: steps.yarn-cache.outputs.cache-hit != 'true'         
+      - name: Install yarn dependencies          
         run: yarn install --prefer-offline  
       - name: see what's in folder
         run: pwd;ls -al
@@ -40,7 +39,8 @@ jobs:
         with:
           node-version: '12'    
       - uses: bahmutov/npm-install@v1
-        run: yarn install --prefer-offline
+      - name: Install yarn dependencies          
+        run: yarn install --prefer-offline  
       # - name: add binary folder to path
       #   run: echo "$PWD/node_modules/.bin" >> $GITHUB_PATH
       - name: see what's in folder
