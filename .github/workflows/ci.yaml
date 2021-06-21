@@ -31,8 +31,8 @@ jobs:
         with:
           path: |
             **/node_modules/.bin
-            **/node_modules/full-icu
-            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            # **/node_modules/full-icu
+            # ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
@@ -59,8 +59,8 @@ jobs:
         with:
           path: |
             **/node_modules/.bin
-            **/node_modules/full-icu
-            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            # **/node_modules/full-icu
+            # ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
@@ -75,11 +75,11 @@ jobs:
         run: echo $PATH
       - name: see what's in node_modules folder
         run: ls -al ./node_modules        
-      - name: check jest runs 
-        run: jest --version
-      - name: check next runs 
-        run: next --version        
-      - name: check tsc runs 
-        run: tsc --version                
-      - name: check tslint runs 
-        run: tslint --version                
+      # - name: check jest runs 
+      #   run: jest --version
+      # - name: check next runs 
+      #   run: next --version        
+      # - name: check tsc runs 
+      #   run: tsc --version                
+      # - name: check tslint runs 
+      #   run: tslint --version                
