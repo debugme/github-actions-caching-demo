@@ -68,6 +68,6 @@ jobs:
       - name: see what's in folder
         run: pwd;ls -al
       - name: ensure node_modules/.bin binaries added to path
-        run: echo "./node_modules/.bin" >> $PATH
+        run: echo ":./node_modules/.bin" >> $PATH
       - name: check jest runs 
         run: jest --version
