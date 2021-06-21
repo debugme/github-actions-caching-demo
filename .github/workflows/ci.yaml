@@ -47,13 +47,13 @@ jobs:
         run: pwd;ls -al
       - name: what is my PATH
         run: echo $PATH
-      # - name: see what's in node_modules folder
-      #   run: ls -al ./node_modules        
-      # - name: check jest runs 
-      #   run: jest --version
-      # - name: check next runs 
-      #   run: next --version        
-      # - name: check tsc runs 
-      #   run: tsc --version                
-      # - name: check tslint runs 
-      #   run: tslint --version                
+      - name: see what's in node_modules folder
+        run: ls -al ./node_modules        
+      - name: check jest runs 
+        run: jest --version
+      - name: check next runs 
+        run: next --version        
+      - name: check tsc runs 
+        run: tsc --version                
+      - name: check tslint runs 
+        run: tslint --version                
