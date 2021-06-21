@@ -72,10 +72,10 @@ jobs:
       - name: what is my PATH
         run: echo $PATH
       - name: check jest runs 
-        run: ./node_modules/.bin/jest --version
+        run: jest --version
       - name: check next runs 
-        run: ./node_modules/.bin/next --version        
+        run: next --version        
       - name: check tsc runs 
-        run: ./node_modules/.bin/tsc --version                
+        run: tsc --version                
       - name: check tslint runs 
-        run: ./node_modules/.bin/tslint --version                
+        run: tslint --version                
