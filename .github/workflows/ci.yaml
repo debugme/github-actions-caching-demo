@@ -57,7 +57,8 @@ jobs:
         id: yarn-cache
         with:
           path: |
-            **/node_modules
+            **/node_modules/.bin
+            **/node_modules/full-icu
             ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
@@ -71,6 +72,8 @@ jobs:
         run: pwd;ls -al
       - name: what is my PATH
         run: echo $PATH
+      - name: what is node_modules folder
+        run: ls -al ./node_modules        
       - name: check jest runs 
         run: jest --version
       - name: check next runs 
